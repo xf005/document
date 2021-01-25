@@ -4,7 +4,6 @@
 
 一、修改pom.xml文件将默认的jar方式改为war：
 
-
 <groupId>com.example</groupId>
 <artifactId>application</artifactId>
 <version>0.0.1-SNAPSHOT</version>
@@ -12,10 +11,10 @@
 <!--<packaging>jar</packaging>-->
 <!--改为war方式-->
 <packaging>war</packaging>
+
 二、排除内置的Tomcat容器（两种方式都可）：
 
 1.排除spring-boot-starter-web中的Tomcat
-
 
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -27,8 +26,8 @@
         </exclusion>
     </exclusions>
 </dependency>
-2.添加依赖
 
+2.添加依赖
 
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -37,6 +36,7 @@
         相当于compile，但是打包阶段做了exclude操作-->
     <scope>provided</scope>
 </dependency>
+
 三、继承org.springframework.boot.web.servlet.support.SpringBootServletInitializer，实现configure方法：
 
 为什么继承该类，SpringBootServletInitializer源码注释：
@@ -107,6 +107,7 @@ server.servlet.context-path=
         </plugin>
     </plugins>
 </build>
+
 使用mvn命令行打包，运行：
 
 clean是清除之前的包，-Dmaven.test.skip=true是忽略测试代码
