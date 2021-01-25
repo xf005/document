@@ -3,7 +3,7 @@
     本文所使用SpringBoot版本为：2.0.3.RELEASE
 
 一、修改pom.xml文件将默认的jar方式改为war：
-
+{% highlight html linenos %}
 <groupId>com.example</groupId>
 <artifactId>application</artifactId>
 <version>0.0.1-SNAPSHOT</version>
@@ -11,7 +11,7 @@
 <!--<packaging>jar</packaging>-->
 <!--改为war方式-->
 <packaging>war</packaging>
-
+{% endhighlight %}
 二、排除内置的Tomcat容器（两种方式都可）：
 
 1.排除spring-boot-starter-web中的Tomcat
