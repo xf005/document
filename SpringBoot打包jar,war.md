@@ -2,7 +2,7 @@
 
     本文所使用SpringBoot版本为：2.0.3.RELEASE
 
-# 一、修改pom.xml文件将默认的jar方式改为war：
+### 一、修改pom.xml文件将默认的jar方式改为war：
 ```
 <groupId>com.example</groupId>
 <artifactId>application</artifactId>
@@ -12,9 +12,9 @@
 <!--改为war方式-->
 <packaging>war</packaging>
 ```
-# 二、排除内置的Tomcat容器（两种方式都可）：
+### 二、排除内置的Tomcat容器（两种方式都可）：
 
-## 1.排除spring-boot-starter-web中的Tomcat
+##### 1.排除spring-boot-starter-web中的Tomcat
 ```
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -27,7 +27,7 @@
     </exclusions>
 </dependency>
 ```
-## 2.添加依赖
+##### 2.添加依赖
 ```
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -37,7 +37,7 @@
     <scope>provided</scope>
 </dependency>
 ```
-# 三、继承org.springframework.boot.web.servlet.support.SpringBootServletInitializer，实现configure方法：
+### 三、继承org.springframework.boot.web.servlet.support.SpringBootServletInitializer，实现configure方法：
 
 为什么继承该类，SpringBootServletInitializer源码注释：
 
@@ -60,7 +60,7 @@ public class Application {
 
 }
 ```
-## 1.方式一，启动类继承SpringBootServletInitializer实现configure：
+##### 1.方式一，启动类继承SpringBootServletInitializer实现configure：
 ```
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
@@ -75,7 +75,7 @@ public class Application extends SpringBootServletInitializer {
     }
 }
 ```
-## 2.方式二，新增加一个类继承SpringBootServletInitializer实现configure：
+##### 2.方式二，新增加一个类继承SpringBootServletInitializer实现configure：
 ```
 public class ServletInitializer extends SpringBootServletInitializer {
 
