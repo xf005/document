@@ -115,13 +115,13 @@ server.servlet.context-path=
 
 clean是清除之前的包，-Dmaven.test.skip=true是忽略测试代码
 
-jar 方式打包，使用内置Tomcat：
+##### jar 方式打包，使用内置Tomcat：
 
     mvn clean install -Dmaven.test.skip=true
 
 运行：java -jar 包名.jar
 
-war方式打包，使用外置Tomcat：
+##### war方式打包，使用外置Tomcat：
 
     mvn clean package -Dmaven.test.skip=true
 
