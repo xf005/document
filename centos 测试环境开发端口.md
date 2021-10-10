@@ -2,6 +2,7 @@
 /etc/firewalld/zones/public.xml
 
 ### 内容如下：
+```
 <?xml version="1.0" encoding="utf-8"?>
 <zone>
   <short>Public</short>
@@ -30,3 +31,4 @@
     <accept/>
   </rule>
 </zone>
+```
