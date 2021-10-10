@@ -1,6 +1,7 @@
-防火墙配置位置：
+### 防火墙配置位置：
 /etc/firewalld/zones/public.xml
-内容如下：
+
+### 内容如下：
 <?xml version="1.0" encoding="utf-8"?>
 <zone>
   <short>Public</short>
